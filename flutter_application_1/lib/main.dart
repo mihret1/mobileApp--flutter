@@ -248,43 +248,17 @@ class _HomeState extends State<Home> {
   int val=1;
   List<String> name=['one','two','three','four'];
   List<Qoute> qute=[
-    Qoute(text: 'text1', author: 'author1'),
-    Qoute(text: 'text2', author: 'author2'),
-    Qoute(text: 'text3', author: 'author3'),
+    Qoute(text: 'text1-In publishing and graphic design, Lorem ipsum is a placeholder text commonly used ', author: 'author1'),
+    Qoute(text: 'text2-In publishing and graphic design, Lorem ipsum is a placeholder text commonly used ', author: 'author2'),
+    Qoute(text: 'text3-In publishing and graphic design, Lorem ipsum is a placeholder text commonly used ', author: 'author3'),
 
   ];
 
 Widget quoteTemplate(quote){
 
-  return Card(
-    margin: EdgeInsets.fromLTRB(16, 16, 16, 0),
-    child: Padding(
-      padding: const EdgeInsets.all(30.0),
-      child: Column(
-        children: [
-          Text(quote.text,
-                style: TextStyle(
-                   fontSize: 18,
-                   color: Colors.grey[600]
-           ),
-           ),
-          SizedBox(height: 6,),
-
-          Text(quote.author,
-               style: TextStyle(
-                   fontSize: 18,
-                   color: Colors.grey[600]
-          ),
-          )
-
-        ],
-      ),
-    ),
-  );
+  return CardWidget(quote:quote);
 
 }
-
-
 
 
 
@@ -383,6 +357,45 @@ Widget quoteTemplate(quote){
         ),
         
         ),
+    );
+  }
+}
+
+class CardWidget extends StatelessWidget {
+  final Qoute quote;
+  CardWidget({ required this.quote});
+
+  // const CardWidget({
+  //   Key? key,
+  // }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      margin: EdgeInsets.fromLTRB(16, 16, 16, 0),
+      child: Padding(
+        padding: const EdgeInsets.all(30.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Text(quote.text,
+                  style: TextStyle(
+                     fontSize: 18,
+                     color: Colors.grey[600]
+             ),
+             ),
+            SizedBox(height: 6,),
+
+            Text(quote.author,
+                 style: TextStyle(
+                     fontSize: 18,
+                     color: Colors.grey[600]
+            ),
+            )
+
+          ],
+        ),
+      ),
     );
   }
 }
