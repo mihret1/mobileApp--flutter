@@ -229,6 +229,7 @@ import 'dart:html';
 
 import 'package:flutter/material.dart';
 import 'qoute.dart';
+import 'quote_card.dart';
 
 void main(){
   runApp(MaterialApp(
@@ -254,11 +255,11 @@ class _HomeState extends State<Home> {
 
   ];
 
-Widget quoteTemplate(quote){
+// Widget quoteTemplate(quote){
 
-  return CardWidget(quote:quote);
+//   return CardWidget(quote:quote);
 
-}
+// }
 
 
 
@@ -351,7 +352,7 @@ Widget quoteTemplate(quote){
 
              Column(children: name.map((e) => Text(e,style: TextStyle(color: Colors.white),)).toList() ),
              Column(children: qute.map((e)=>Text('${e.author} --> ${e.text}',style: TextStyle(color: Colors.white))).toList()),
-             Column(children: qute.map((e) => quoteTemplate(e)).toList())
+             Column(children: qute.map((e) => CardWidget(quote:e)).toList())
 
           ],
         ),
@@ -360,44 +361,4 @@ Widget quoteTemplate(quote){
     );
   }
 }
-
-class CardWidget extends StatelessWidget {
-  final Qoute quote;
-  CardWidget({ required this.quote});
-
-  // const CardWidget({
-  //   Key? key,
-  // }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      margin: EdgeInsets.fromLTRB(16, 16, 16, 0),
-      child: Padding(
-        padding: const EdgeInsets.all(30.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Text(quote.text,
-                  style: TextStyle(
-                     fontSize: 18,
-                     color: Colors.grey[600]
-             ),
-             ),
-            SizedBox(height: 6,),
-
-            Text(quote.author,
-                 style: TextStyle(
-                     fontSize: 18,
-                     color: Colors.grey[600]
-            ),
-            )
-
-          ],
-        ),
-      ),
-    );
-  }
-}
-
 
