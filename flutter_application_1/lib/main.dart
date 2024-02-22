@@ -252,8 +252,41 @@ class _HomeState extends State<Home> {
     Qoute(text: 'text2', author: 'author2'),
     Qoute(text: 'text3', author: 'author3'),
 
-
   ];
+
+Widget quoteTemplate(quote){
+
+  return Card(
+    margin: EdgeInsets.fromLTRB(16, 16, 16, 0),
+    child: Padding(
+      padding: const EdgeInsets.all(30.0),
+      child: Column(
+        children: [
+          Text(quote.text,
+                style: TextStyle(
+                   fontSize: 18,
+                   color: Colors.grey[600]
+           ),
+           ),
+          SizedBox(height: 6,),
+
+          Text(quote.author,
+               style: TextStyle(
+                   fontSize: 18,
+                   color: Colors.grey[600]
+          ),
+          )
+
+        ],
+      ),
+    ),
+  );
+
+}
+
+
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -280,70 +313,72 @@ class _HomeState extends State<Home> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Center(
-              child: CircleAvatar(
-                backgroundImage: AssetImage('assets/fiverr.jpg'),
-                radius: 50,
-              ),
-            ),
-            Divider(color: Colors.grey,height: 70,),
-             Text(
-              'NAME',
-              style: TextStyle(
-                letterSpacing: 3,
-                color: Color.fromARGB(177, 135, 138, 134)
-              ),
-             ),
-             SizedBox(height: 10,),
-              Text(
-              'Chulin-Li',
-              style: TextStyle(
-                letterSpacing: 4,
-                color: Colors.yellow,
-                fontSize: 22,
-                fontWeight: FontWeight.bold,
-              ),
-             ),
-             SizedBox(height: 20,),
+            // Center(
+            //   child: CircleAvatar(
+            //     backgroundImage: AssetImage('assets/fiverr.jpg'),
+            //     radius: 50,
+            //   ),
+            // ),
+            // Divider(color: Colors.grey,height: 70,),
+            //  Text(
+            //   'NAME',
+            //   style: TextStyle(
+            //     letterSpacing: 3,
+            //     color: Color.fromARGB(177, 135, 138, 134)
+            //   ),
+            //  ),
+            //  SizedBox(height: 10,),
+            //   Text(
+            //   'Chulin-Li',
+            //   style: TextStyle(
+            //     letterSpacing: 4,
+            //     color: Colors.yellow,
+            //     fontSize: 22,
+            //     fontWeight: FontWeight.bold,
+            //   ),
+            //  ),
+            //  SizedBox(height: 20,),
 
-             Text(
-              'Height from measurment',
-              style: TextStyle(
-                letterSpacing: 3,
-                color: Color.fromARGB(177, 135, 138, 134)
-              ),
-             ),
-             SizedBox(height: 10,),
-              Text(
-              '$val',
-              style: TextStyle(
-                letterSpacing: 4,
-                color: Colors.yellow,
-                fontSize: 22,
-                fontWeight: FontWeight.bold,
-              ),
-             ),
-             SizedBox(height: 20,),
-             Row(
-              children: [
-                Text('Email',
-                style: TextStyle(
-                letterSpacing: 3,
-                color: Color.fromARGB(177, 135, 138, 134)
-              ),
-                ),
-                SizedBox(width: 4,),
-                Icon(Icons.mail,  color: Color.fromARGB(177, 135, 138, 134)
-              ),
-              Text('mihlet2@gmail.com',
-              style: TextStyle(
-                color: Color.fromARGB(177, 135, 138, 134)
-              ),)
-              ],
-             ),
+            //  Text(
+            //   'Height from measurment',
+            //   style: TextStyle(
+            //     letterSpacing: 3,
+            //     color: Color.fromARGB(177, 135, 138, 134)
+            //   ),
+            //  ),
+            //  SizedBox(height: 10,),
+            //   Text(
+            //   '$val',
+            //   style: TextStyle(
+            //     letterSpacing: 4,
+            //     color: Colors.yellow,
+            //     fontSize: 22,
+            //     fontWeight: FontWeight.bold,
+            //   ),
+            //  ),
+            //  SizedBox(height: 20,),
+            //  Row(
+            //   children: [
+            //     Text('Email',
+            //     style: TextStyle(
+            //     letterSpacing: 3,
+            //     color: Color.fromARGB(177, 135, 138, 134)
+            //   ),
+            //     ),
+            //     SizedBox(width: 4,),
+            //     Icon(Icons.mail,  color: Color.fromARGB(177, 135, 138, 134)
+            //   ),
+            //   Text('mihlet2@gmail.com',
+            //   style: TextStyle(
+            //     color: Color.fromARGB(177, 135, 138, 134)
+            //   ),)
+            //   ],
+            //  ),
 
              Column(children: name.map((e) => Text(e,style: TextStyle(color: Colors.white),)).toList() ),
-             Column(children: qute.map((e)=>Text('${e.author} --> ${e.text}',style: TextStyle(color: Colors.white))).toList())
+             Column(children: qute.map((e)=>Text('${e.author} --> ${e.text}',style: TextStyle(color: Colors.white))).toList()),
+             Column(children: qute.map((e) => quoteTemplate(e)).toList())
+
           ],
         ),
         
