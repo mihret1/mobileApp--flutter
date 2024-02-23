@@ -225,140 +225,167 @@
 // }
 
 
-import 'dart:html';
+// import 'dart:html';
 
-import 'package:flutter/material.dart';
-import 'qoute.dart';
-import 'quote_card.dart';
+// import 'package:flutter/material.dart';
+// import 'qoute.dart';
+// import 'quote_card.dart';
 
-void main(){
-  runApp(MaterialApp(
-    home: Home(),
-  ));
-}
-
-
-class Home extends StatefulWidget {
-  const Home({ Key? key }) : super(key: key);
-
-  @override
-  State<Home> createState() => _HomeState();
-}
-
-class _HomeState extends State<Home> {
-  int val=1;
-  List<String> name=['one','two','three','four'];
-  List<Qoute> qute=[
-    Qoute(text: 'text1-In publishing and graphic design, Lorem ipsum is a placeholder text commonly used ', author: 'author1'),
-    Qoute(text: 'text2-In publishing and graphic design, Lorem ipsum is a placeholder text commonly used ', author: 'author2'),
-    Qoute(text: 'text3-In publishing and graphic design, Lorem ipsum is a placeholder text commonly used ', author: 'author3'),
-
-  ];
-
-// Widget quoteTemplate(quote){
-
-//   return CardWidget(quote:quote);
-
+// void main(){
+//   runApp(MaterialApp(
+//     home: Home(),
+//   ));
 // }
 
 
+// class Home extends StatefulWidget {
+//   const Home({ Key? key }) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return  Scaffold(
-      backgroundColor: Color.fromARGB(255, 46, 45, 45),
-      appBar:AppBar(
-        title: Text('project one'),
-        centerTitle: true,
-        backgroundColor: Color.fromARGB(221, 70, 68, 68),
-        elevation: 0,
-      ),
-      floatingActionButton:FloatingActionButton(
-        child:Icon(Icons.add),
-        backgroundColor:Colors.grey,
-        onPressed:(){
-          setState((){
-            val =val+1;
-          });
-        }
-      ),
-      body: Padding(
+//   @override
+//   State<Home> createState() => _HomeState();
+// }
+
+// class _HomeState extends State<Home> {
+//   int val=1;
+//   List<String> name=['one','two','three','four'];
+//   List<Qoute> qute=[
+//     Qoute(text: 'text1-In publishing and graphic design, Lorem ipsum is a placeholder text commonly used ', author: 'author1'),
+//     Qoute(text: 'text2-In publishing and graphic design, Lorem ipsum is a placeholder text commonly used ', author: 'author2'),
+//     Qoute(text: 'text3-In publishing and graphic design, Lorem ipsum is a placeholder text commonly used ', author: 'author3'),
+
+//   ];
+
+// // Widget quoteTemplate(quote){
+
+// //   return CardWidget(quote:quote);
+
+// // }
+
+
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return  Scaffold(
+//       backgroundColor: Color.fromARGB(255, 46, 45, 45),
+//       appBar:AppBar(
+//         title: Text('project one'),
+//         centerTitle: true,
+//         backgroundColor: Color.fromARGB(221, 70, 68, 68),
+//         elevation: 0,
+//       ),
+//       floatingActionButton:FloatingActionButton(
+//         child:Icon(Icons.add),
+//         backgroundColor:Colors.grey,
+//         onPressed:(){
+//           setState((){
+//             val =val+1;
+//           });
+//         }
+//       ),
+//       body: Padding(
         
-        padding: EdgeInsets.all(30),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            // Center(
-            //   child: CircleAvatar(
-            //     backgroundImage: AssetImage('assets/fiverr.jpg'),
-            //     radius: 50,
-            //   ),
-            // ),
-            // Divider(color: Colors.grey,height: 70,),
-            //  Text(
-            //   'NAME',
-            //   style: TextStyle(
-            //     letterSpacing: 3,
-            //     color: Color.fromARGB(177, 135, 138, 134)
-            //   ),
-            //  ),
-            //  SizedBox(height: 10,),
-            //   Text(
-            //   'Chulin-Li',
-            //   style: TextStyle(
-            //     letterSpacing: 4,
-            //     color: Colors.yellow,
-            //     fontSize: 22,
-            //     fontWeight: FontWeight.bold,
-            //   ),
-            //  ),
-            //  SizedBox(height: 20,),
+//         padding: EdgeInsets.all(5),
+//         child: Column(
+//           crossAxisAlignment: CrossAxisAlignment.start,
+//           children: <Widget>[
+//             // Center(
+//             //   child: CircleAvatar(
+//             //     backgroundImage: AssetImage('assets/fiverr.jpg'),
+//             //     radius: 50,
+//             //   ),
+//             // ),
+//             // Divider(color: Colors.grey,height: 70,),
+//             //  Text(
+//             //   'NAME',
+//             //   style: TextStyle(
+//             //     letterSpacing: 3,
+//             //     color: Color.fromARGB(177, 135, 138, 134)
+//             //   ),
+//             //  ),
+//             //  SizedBox(height: 10,),
+//             //   Text(
+//             //   'Chulin-Li',
+//             //   style: TextStyle(
+//             //     letterSpacing: 4,
+//             //     color: Colors.yellow,
+//             //     fontSize: 22,
+//             //     fontWeight: FontWeight.bold,
+//             //   ),
+//             //  ),
+//             //  SizedBox(height: 20,),
 
-            //  Text(
-            //   'Height from measurment',
-            //   style: TextStyle(
-            //     letterSpacing: 3,
-            //     color: Color.fromARGB(177, 135, 138, 134)
-            //   ),
-            //  ),
-            //  SizedBox(height: 10,),
-            //   Text(
-            //   '$val',
-            //   style: TextStyle(
-            //     letterSpacing: 4,
-            //     color: Colors.yellow,
-            //     fontSize: 22,
-            //     fontWeight: FontWeight.bold,
-            //   ),
-            //  ),
-            //  SizedBox(height: 20,),
-            //  Row(
-            //   children: [
-            //     Text('Email',
-            //     style: TextStyle(
-            //     letterSpacing: 3,
-            //     color: Color.fromARGB(177, 135, 138, 134)
-            //   ),
-            //     ),
-            //     SizedBox(width: 4,),
-            //     Icon(Icons.mail,  color: Color.fromARGB(177, 135, 138, 134)
-            //   ),
-            //   Text('mihlet2@gmail.com',
-            //   style: TextStyle(
-            //     color: Color.fromARGB(177, 135, 138, 134)
-            //   ),)
-            //   ],
-            //  ),
+//             //  Text(
+//             //   'Height from measurment',
+//             //   style: TextStyle(
+//             //     letterSpacing: 3,
+//             //     color: Color.fromARGB(177, 135, 138, 134)
+//             //   ),
+//             //  ),
+//             //  SizedBox(height: 10,),
+//             //   Text(
+//             //   '$val',
+//             //   style: TextStyle(
+//             //     letterSpacing: 4,
+//             //     color: Colors.yellow,
+//             //     fontSize: 22,
+//             //     fontWeight: FontWeight.bold,
+//             //   ),
+//             //  ),
+//             //  SizedBox(height: 20,),
+//             //  Row(
+//             //   children: [
+//             //     Text('Email',
+//             //     style: TextStyle(
+//             //     letterSpacing: 3,
+//             //     color: Color.fromARGB(177, 135, 138, 134)
+//             //   ),
+//             //     ),
+//             //     SizedBox(width: 4,),
+//             //     Icon(Icons.mail,  color: Color.fromARGB(177, 135, 138, 134)
+//             //   ),
+//             //   Text('mihlet2@gmail.com',
+//             //   style: TextStyle(
+//             //     color: Color.fromARGB(177, 135, 138, 134)
+//             //   ),)
+//             //   ],
+//             //  ),
 
-             Column(children: name.map((e) => Text(e,style: TextStyle(color: Colors.white),)).toList() ),
-             Column(children: qute.map((e)=>Text('${e.author} --> ${e.text}',style: TextStyle(color: Colors.white))).toList()),
-             Column(children: qute.map((e) => CardWidget(quote:e)).toList())
+//             //  Column(children: name.map((e) => Text(e,style: TextStyle(color: Colors.white),)).toList() ),
+//             //  Column(children: qute.map((e)=>Text('${e.author} --> ${e.text}',style: TextStyle(color: Colors.white))).toList()),
+//              Column(children: qute.map((e) => CardWidget(
+//               quote:e,
+//               delete: (){
+//                   setState(() {
+//                   qute.remove(e);
+//               });
+             
+//              },
+//              )).toList(),)
 
-          ],
-        ),
+//           ],
+//         ),
         
-        ),
-    );
-  }
+//         ),
+//     );
+//   }
+// }
+
+
+import 'dart:js';
+
+import 'package:flutter/material.dart';
+import 'package:flutter_application_1/pages/home.dart';
+import 'package:flutter_application_1/pages/choose_location.dart';
+import 'package:flutter_application_1/pages/loading.dart';
+
+void main(){
+  runApp(MaterialApp(
+    // home: Homee(),
+    initialRoute: '/home',
+    routes: {
+      '/':(context)=>Loading(),
+      '/home':(context) => Homee(),
+      '/location':(context) => ChooseLocation()
+    },
+  ));
 }
-
