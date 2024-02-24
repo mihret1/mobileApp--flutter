@@ -381,7 +381,7 @@ import 'package:flutter_application_1/pages/loading.dart';
 void main(){
   runApp(MaterialApp(
     // home: Homee(),
-    initialRoute: '/home',
+    initialRoute: '/location',
     routes: {
       '/':(context)=>Loading(),
       '/home':(context) => Homee(),

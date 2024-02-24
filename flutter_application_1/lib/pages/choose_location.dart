@@ -17,7 +17,21 @@ class _ChooseLocationState extends State<ChooseLocation> {
       centerTitle: true,
       elevation: 0,
       ),
-      body: Text('choose location screen'),
+      body: ListView.builder(
+        itemCount:10,
+        itemBuilder: (context,index){
+          return Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+            child: Card(
+              child: ListTile(
+                onTap: (){},
+                leading: CircleAvatar(backgroundImage: AssetImage('assets/fiverr.jpg')),
+                title: Text('her name was written before'),
+              ),
+            ),
+            );
+        }
+        ),
     );
   }
 }
