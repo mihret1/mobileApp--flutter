@@ -376,6 +376,7 @@ import 'package:flutter_application_1/pages/choose_location.dart';
 import 'package:flutter_application_1/pages/loading.dart';
 import 'package:flutter_application_1/pages/grid.dart';
 import 'package:flutter_application_1/pages/nav.dart';
+import 'package:flutter_application_1/pages/tab.dart';
 
 void main(){
   runApp(MaterialApp(
@@ -386,7 +387,9 @@ void main(){
       '/home':(context) => Homee(),
       '/location':(context) => ChooseLocation(),
       '/grid':(context) => Gridee(),
-      '/nav':(context) => Nave()
+      '/nav':(context) => Nave(),
+      '/tab':(context) => Tabe()
+
 
     },
   ));

@@ -21,7 +21,13 @@ class _NaveState extends State<Nave> {
         crossAxisSpacing: 3,
         children: [Text('1'),Text('2'),Text('3'),Text('4'),Text('5'),Text('6'),Text('7'),Text('8'),Text('9'),Icon(Icons.star),Icon(Icons.add),Icon(Icons.tag)],
    ),),
-   Text('two'),
+   Padding( 
+    padding: EdgeInsets.all(40),
+    child: Container(child: Text('two'), color: Colors.red,padding: EdgeInsets.all(50),),
+    
+    
+    
+    ),
    Text('three')
      ];
   @override
