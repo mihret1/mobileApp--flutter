@@ -78,8 +78,6 @@
 
 // import 'package:flutter/material.dart';
 
-
-
 // void main(){
 //   runApp(MaterialApp(
 //     home:Home()
@@ -87,7 +85,6 @@
 //   )
 //   );
 // }
-
 
 
 // class Home extends StatelessWidget {
@@ -377,6 +374,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/home.dart';
 import 'package:flutter_application_1/pages/choose_location.dart';
 import 'package:flutter_application_1/pages/loading.dart';
+import 'package:flutter_application_1/pages/grid.dart';
 
 void main(){
   runApp(MaterialApp(
@@ -385,7 +383,10 @@ void main(){
     routes: {
       '/':(context)=>Loading(),
       '/home':(context) => Homee(),
-      '/location':(context) => ChooseLocation()
+      '/location':(context) => ChooseLocation(),
+      '/grid':(context) => Gridee()
     },
   ));
 }
+
+

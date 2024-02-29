@@ -24,7 +24,9 @@ class _ChooseLocationState extends State<ChooseLocation> {
             padding: EdgeInsets.symmetric(horizontal: 20,vertical: 10),
             child: Card(
               child: ListTile(
-                onTap: (){},
+                onTap: (){
+                  Navigator.pushNamed(context, '/home');
+                },
                 leading: CircleAvatar(backgroundImage: AssetImage('assets/fiverr.jpg')),
                 title: Text('her name was written before'),
               ),

@@ -19,12 +19,37 @@ class _HomeState extends State<Homee> {
                 Navigator.pushNamed(context, '/location');
               },
                icon: Icon(Icons.edit_location), 
-               label: Text('edit location'))
-          ],        )),
-    );
-  
+               label: Text('edit location')
+               ),
+            FlatButton.icon(
+              onPressed: (){
+                Navigator.pop(context);
+              },
+               icon: Icon(Icons.edit_location), 
+               label: Text('Home')
+               ),
+            // ListView.builder(
+            //     itemCount: 10,
+            //     itemBuilder:(context,index){
+            //       return(
+            //         Container(child: Text('hello'),)
+            //       );
+            //     }
+            //     )
+
+          ],
+           )
+          ),
+
+    );  
   }
 }
+
+
+
+
+
+
 
 
 
